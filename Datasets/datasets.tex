@@ -1,0 +1,17 @@
+\chapter{Datasets}
+
+This section describes the datasets used in this work. Onset detection algorithms are evaluated on two datasets; GuitarSet and MusicCritic dataset. They represent two different ends and complement each other. In MusicCritic dataset, simple exercises are played in environments that are not high quality and diverse. In GuitarSet, performances are complex and fast, recorded in a soundproof studio. For automatic rhythm assessment, we use MusicCritic dataset.
+
+\section{GuitarSet}
+
+This dataset \cite{xi2018guitarset} contains 360 recordings total of 183 minutes. Half of them are solo (mostly single notes) and the other half is the corresponding accompaniment (chords) tracks. Six players with more than 10 years of experience are given lead sheets and asked to play accompaniment and then solo over their accompaniment. Performances include various keys, tempi, and genres. Each string is recorded and annotated separately using a hexaphonic pickup. Onsets are automatically generated and then manually corrected. Dead notes that are not audible and non-note events are discarded from the onset annotations.\\ 
+In this work, we use mono microphone recordings for the onset detection task. Onset locations of each string are taken from the annotations and onsets that are close to each other (e.g. strummed chords) are merged.
+
+
+\section{MusicCritic Dataset}
+
+This dataset \cite{eremenko2020performance} contains 232 recordings. 107 of them contain only chords and the rest of them only single notes. Six exercises (3 chord and 3 single note) are performed by players with various skill levels. Recordings are made with different setups and guitars. Two guitar teachers graded the recordings, from 1 to 4, on rhythm accuracy, pitch accuracy, guitar tuning, and overall performance. Onsets are manually annotated as explained in section \ref{mc_annot}.
+
+\section{Guitar Noises Dataset}
+
+Examination of guitar noises would contribute to both onset and noise detection and synthesis of realistic guitar sounds. But there are no public datasets for such noises. We created a dataset that contains buzz and slide noises from wound strings of a classical guitar. Our aim is to understand the nature of these noises better and develop the onset detection algorithm accordingly. See appendix \ref{appendix:b} for details. \\

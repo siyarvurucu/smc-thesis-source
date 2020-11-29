@@ -1,0 +1,67 @@
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry} %Margins
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{tocloft}
+\usepackage{amsmath}
+\usepackage{chngcntr }
+\usepackage[toc,page]{appendix}
+\usepackage[T1]{fontenc}
+\usepackage[nottoc]{tocbibind}
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{1ex}{0ex}
+\titlespacing{\subsection}{0pt}{1ex}{0ex}
+\titlespacing{\subsubsection}{0pt}{1ex}{0ex}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\include{thesis.preamble}
+
+\begin{document}
+
+\newgeometry{left=2cm,right=2cm} %Only for the title new margins
+
+%Title parameters
+\title{Onset Detection for Automatic Assessment of Guitar Performances}
+\author{Şiyar Ramazan Vurucu}
+\submitdate{September 2020}
+\supervisor{Xavier Serra}
+
+
+\maketitle
+\makeendtitle
+\restoregeometry
+
+\preface
+\cleardoublepage 
+\input{acknowledgements/acknowledgements}
+\input{abstract/abstract}
+
+\body
+
+%Introduction of the project
+\input{introduction/introduction}
+\input{related work/relatedwork}
+\input{Datasets/datasets}
+\input{methods/methods}
+\input{commonnoises/Common Noises in Guitar Recordings}
+\input{hod/Harmonic Onset Detection Algorithm}
+\input{results/results}
+\input{discussion/discussion}
+\input{conclusion/conclusion}
+
+\listoffigures
+\newpage
+\listoftables
+
+% appendices come here
+\bibliographystyle{naturemag}
+\bibliography{bibliography}
+
+\input{appendix/appendix}
+
+\end{document}
